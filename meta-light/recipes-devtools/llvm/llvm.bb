@@ -24,7 +24,8 @@ SRC_URI = "git://github.com/llvm/llvm-project.git;branch=${BRANCH};protocol=http
            file://0007-llvm-allow-env-override-of-exe-path.patch;striplevel=2 \
            file://0001-fix-the-atomic-build-failure.patch;patchdir=.. \
            file://0001-Force-to-link-the-dl-to-wa-the-find-dl-lib-issue.patch;patchdir=.. \
-          "
+	   file://0001-llvm-utils-benchmark-fix-to-build-with-gcc-11.patch;patchdir=.. \
+"
 
 S = "${WORKDIR}/git/llvm"
 

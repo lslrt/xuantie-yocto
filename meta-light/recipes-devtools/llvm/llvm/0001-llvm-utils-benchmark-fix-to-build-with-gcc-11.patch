@@ -1,0 +1,29 @@
+From 809de4fabe2971d699a1d392ebb87c619e64981f Mon Sep 17 00:00:00 2001
+From: leo sartre <sartre.leo@gmail.com>
+Date: Mon, 24 Jul 2023 19:43:13 +0200
+Subject: [PATCH] llvm/utils/benchmark: fix to build with gcc 11
+
+According to porting guide:
+https://www.gnu.org/software/gcc/gcc-11/porting_to.html
+limits must be icluded to use std::numeric_limits.
+
+Signed-off-by: leo sartre <sartre.leo@gmail.com>
+---
+ llvm/utils/benchmark/src/benchmark_register.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/llvm/utils/benchmark/src/benchmark_register.h b/llvm/utils/benchmark/src/benchmark_register.h
+index 0705e219f2fa..4caa5ad4da07 100644
+--- a/llvm/utils/benchmark/src/benchmark_register.h
++++ b/llvm/utils/benchmark/src/benchmark_register.h
+@@ -1,6 +1,7 @@
+ #ifndef BENCHMARK_REGISTER_H
+ #define BENCHMARK_REGISTER_H
+ 
++#include <limits>
+ #include <vector>
+ 
+ #include "check.h"
+-- 
+2.39.2
+
